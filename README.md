@@ -39,3 +39,8 @@ If you want to combine them 4, 5 & 6 OR do same in one task i.e 7
 
 9. PlotAddresses(string listLongLat)
 ==>  listLongLat = LONG,LAT|LONG2,LAT2|LONG3,LAT3     (separated by | each pair)
+
+
+If you want to test maps api via browser, copy and paste following url to see the actual error from Google Maps API.
+
+https://maps.google.com/maps/api/geocode/xml?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&sensor=false&key=<YOUR_API_KEY>
