@@ -1,5 +1,14 @@
 Verify Address, Plot Address, Render Custom Map with Custom CSS, Get Geocode, Get List Cites using Google Maps API in .NET
 
+------------------------------------------------------------------------------------
+References:
+=========
+1. https://developers.google.com/maps/gmp-get-started
+2. https://developers.google.com/maps/documentation/javascript/get-api-key to get and API Key
+3. https://developers.google.com/maps/documentation/geocoding/start
+4. https://developers.google.com/maps/documentation/geocoding/intro
+------------------------------------------------------------------------------------
+
 1. VerifyAddress(string Address)
 ==> returns ROOFTOP or APPROXIMATE from google and you have to resolve to TRUE or FALSE.
 

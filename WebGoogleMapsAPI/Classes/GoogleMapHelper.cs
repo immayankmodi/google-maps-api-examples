@@ -7,7 +7,8 @@ namespace WebGoogleMapsAPI.Classes {
 
     public class GoogleMapHelper {
 
-        private static string addressAPI = "http://maps.googleapis.com/maps/api/geocode/xml?address={0}&sensor=false";
+        private static string apiKey = "YOUR_API_KEY";
+        private static string addressAPI = "https://maps.googleapis.com/maps/api/geocode/xml?address={0}&key=" + apiKey  + "&sensor=false";
 
         public XElement GetGoogleMapsAPIResponse(string requestUri) {
             XElement resGeocode = null;
@@ -18,7 +19,7 @@ namespace WebGoogleMapsAPI.Classes {
                 var xdoc = XDocument.Load(response.GetResponseStream());
                 resGeocode = xdoc.Element("GeocodeResponse").Element("result");
             } catch (Exception ex) {
-                Console.WriteLine(ex.Message);
+                string error = ex.Message;
             }
 
             return resGeocode;
@@ -41,6 +42,7 @@ namespace WebGoogleMapsAPI.Classes {
                     kvpStatus.Insert(0, new KeyValuePair<string, string>("FALSE", "Not able to verify this address"));
                 }
             } catch (Exception ex) {
+                string error = ex.Message;
                 kvpStatus.Insert(0, new KeyValuePair<string, string>("FALSE", "Google can't find the address"));
             }
 
@@ -67,6 +69,7 @@ namespace WebGoogleMapsAPI.Classes {
                     kvpLatAndLon.Insert(0, new KeyValuePair<string, string>("FALSE", "Not able to get Latitude and Longitude for this address"));
                 }
             } catch (Exception ex) {
+                string error = ex.Message;
                 kvpLatAndLon.Insert(0, new KeyValuePair<string, string>("FALSE", "Google can't find the address"));
             }
 
